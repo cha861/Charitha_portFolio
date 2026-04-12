@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Charitha</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Portfolio</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <div class="hero-sub">Web Developer and AI/ML Enthusiast</div>
+      <h1 class="hero-name">Hello, I'm <br><span style="color: var(--accent);">Charitha Chandrasekharapuram</span></h1>
+      <p class="hero-role">I develop high-quality, accessible web applications while exploring AI/ML to create
+        intelligent, future-ready products.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-image fade-in delay-1">
+      <img src="profile.jpg" class="avatar" alt="Profile Picture">
+      <div class="avatar-ring"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section bg-muted">
+    <div class="container text-center">
+      <span class="section-tag">Introduction</span>
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text visible mx-auto" style="margin: 0 auto;">
+        I’m a 3rd-year CSE student with a strong interest in web development and machine learning, creating intuitive,
+        visually appealing interfaces while continuously learning new technologies to solve real-world challenges.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">My Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card visible">
+          <div class="skill-icon">💻</div>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="skill-card visible">
+          <div class="skill-icon">🎨</div>
+          <h3>UI/UX</h3>
+          <p>Basic design principles</p>
+        </div>
+        <div class="skill-card visible">
+          <div class="skill-icon">🤖</div>
+          <h3>AI/ML</h3>
+          <p>Python, ML basics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section bg-muted">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card visible">
+          <span class="project-badge">Web</span>
+          <h3>Portfolio Website</h3>
+          <p>My personal portfolio built using HTML & CSS.</p>
+          <a href="#" class="project-link">View Project &rarr;</a>
+        </div>
+        <div class="project-card visible">
+          <span class="project-badge">ML</span>
+          <h3>ML Project</h3>
+          <p>Simple classification model.</p>
+          <a href="#" class="project-link">View Project &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
+
+      <form id="contactForm" class="contact-form" style="margin: 0 auto;" action="https://api.web3forms.com/submit"
+        method="POST">
+        <input type="hidden" name="access_key" value="065ccbc0-a1fa-4d27-aa98-995f8a0cd87d">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Send Message
+        </button>
+        <div id="formStatus" class="form-status"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>&copy; 2026 Charitha. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/charitha93926" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      <a href="https://github.com/cha861" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+      });
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const statusDiv = document.getElementById("formStatus");
+      statusDiv.textContent = "Sending...";
+      statusDiv.className = "form-status";
+
+      const formData = new FormData(this);
+
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        if (res.ok) {
+          statusDiv.textContent = "Message sent successfully!";
+          statusDiv.className = "form-status success";
+          this.reset();
+        } else {
+          statusDiv.textContent = "Error sending message. Please try again.";
+          statusDiv.className = "form-status error";
+        }
+      } catch (err) {
+        statusDiv.textContent = "Network error while sending message.";
+        statusDiv.className = "form-status error";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+
+</html>
